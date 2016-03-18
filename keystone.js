@@ -5,7 +5,9 @@ require('dotenv').load();
 // Require keystone
 var keystone = require('keystone');
 var cons = require('consolidate');
-var nunjucks = require('nunjucks-no-chokidar');
+var nunjucks = require('nunjucks');
+
+nunjucks.configure(undefined, {watch: false});
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
