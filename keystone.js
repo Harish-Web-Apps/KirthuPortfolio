@@ -5,7 +5,7 @@ require('dotenv').load();
 // Require keystone
 var keystone = require('keystone');
 var cons = require('consolidate');
-var nunjucks = require('nunjucks');
+var nunjucks = require('nunjucks-no-chokidar');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -15,16 +15,16 @@ keystone.init({
 
 	'name': 'Kirthu Portfolio',
 	'brand': 'Kirthu Portfolio',
-	
+
 	'less': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'html',
 	'custom engine': cons.nunjucks,
-	
+
 	'emails': 'templates/emails',
-	
+
 	'auto update': true,
 	'session': true,
 	'auth': true,
