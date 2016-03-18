@@ -1,0 +1,175 @@
+#header {
+	margin-top: 30px;
+}
+
+#footer {
+	margin-top: 30px;
+	border-top: 1px solid #eeeeee;
+	padding-top: 30px;
+	color: #777777;
+}
+
+.footer_copyright {
+	text-align: right;
+    font-size: 11px;
+    line-height: 14px;
+    color: #9b9b9b;
+}
+
+.gallery-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.navigation {
+    list-style: none;
+    background: #fff;
+    width: 16%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.site-wrap {
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #eee;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.site-wrap {
+    /* ...previous styles here... */
+    padding: 4em;
+    background-image: rgb(254,255,255);
+    background-size: 200%;
+}
+
+.is-active {
+    left: 215px !important;
+}
+
+.is-active ~ .site-wrap {
+    left: 215px;
+    // box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
+
+.is-active, .site-wrap {
+    transition: @transition-menu;
+}
+
+
+//navigation
+.header-primary li a {
+    line-height: 20px;
+    padding: 14px 0;
+		display: block;
+		font-size: 1.1em;
+}
+
+a {
+    color: #1a1a1a;
+    text-decoration: none !important;
+}
+
+.header-primary li a.is-active {
+    color: #1a1a1a;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.header-primary li a:first-letter {
+    text-transform: uppercase;
+}
+
+.header-primary, .header-contact {
+    padding: 20px 28px;
+    text-align: left;
+}
+
+.header-primary li {
+    position: relative;
+}
+
+.header-primary li, .header-primary h3, .header-contact li, .header-contact h3 {
+    display: block;
+    font-size: 1.0625em;
+    line-height: 1.11765em;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.header-social {
+    padding: 0 10px;
+    position: fixed;
+    bottom: 24px;
+    left: 8px;
+}
+
+.header-social li {
+    margin-right: -3px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.icon-facebook, .icon-behance, .icon-twitter {
+    position: relative;
+}
+
+.icon-facebook {
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height: 40px;
+    text-align: left;
+    background: url("/images/social-sprite.svg") 0 -100px no-repeat;
+}
+
+.icon-behance {
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height: 40px;
+    text-align: left;
+    background: url("/images/social-sprite.svg") -40px -100px no-repeat;
+}
+
+.icon-twitter {
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height: 40px;
+    text-align: left;
+    background: url("/images/social-sprite.svg") -80px -100px no-repeat;
+}
+
+.icon-facebook:hover {
+    background: url("/images/social-sprite.svg") -150px -100px no-repeat;
+    background-color: #fff;
+}
+.icon-behance:hover {
+    background: url("/images/social-sprite.svg") -190px -100px no-repeat;
+    background-color: #fff;
+}
+.icon-twitter:hover {
+    background: url("/images/social-sprite.svg") -230px -100px no-repeat;
+    background-color: #fff;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
