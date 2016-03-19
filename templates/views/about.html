@@ -1,0 +1,16 @@
+{% extends "templates/layouts/base-page.html" %}
+
+{% block content %}
+
+{% if not data.abouts %}
+  <h2>Invalid Data.</h2>
+{% else %}
+  {% for about in data.abouts %}
+    <h2>{{ about.title }}</h2>
+    <div>
+      {{ about.content}}
+    </div>
+  {% endfor %}
+{% endif %}
+
+{% endblock %}
