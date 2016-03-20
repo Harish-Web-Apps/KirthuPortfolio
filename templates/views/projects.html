@@ -1,0 +1,24 @@
+{% extends "templates/layouts/base-page.html" %}
+
+{% block content %}
+
+<div id="wrapper">
+	<div id="columns">
+
+    {% if not data.projects %}
+      <h2>Invalid Data.</h2>
+    {% else %}
+      {% for project in data.projects %}
+        <div class="pin">
+          <img src="{{ project.images[0].url }}" />
+          <p>
+            {{ project.title }}
+          </p>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+	</div>
+</div>
+
+{% endblock %}
