@@ -1,0 +1,78 @@
+{% extends "templates/layouts/base-page.html" %}
+
+{% block content %}
+
+{% macro listItembuilder(category) %}
+  {% for listItem in data.listItems %}
+    {% if listItem.category == category %}
+      {% if category == 'education' %}
+        <h4>{{ listItem.orgName}}</h4>
+        <h5>{{ listItem.title }}</h5>
+      {% else %}
+        <h4>{{ listItem.title }}</h4>
+        <h5>{{ listItem.orgName}}</h5>
+      {% endif %}
+      <div class="experience-date">
+        <span class="dateFormat">{{ listItem._.fromDate.format("MMMM YYYY") }}</span>
+        -
+        {% if not listItem.toDate %}
+          <span>Present</span>
+        {% else %}
+          <span class="dateFormat">{{ listItem._.toDate.format("MMMM YYYY") }}</span>
+        {% endif %}
+        |
+        <span>{{ listItem.location }}</span>
+      </div>
+      {% if listItem.logo.url %}
+        <!-- <img src="{{ listItem._.logo.thumbnail('50', '50') }}"></img> -->
+      {% endif %}
+      <div id="desc">
+        {{ listItem.description }}
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+<div id="resume">
+
+{% if not data.listItems %}
+  <h2>Invalid Data.</h2>
+{% else %}
+
+  <div id="" class="res-section">
+  <span class="glyphicon glyphicon-briefcase res-icon"></span><h3>Experience</h3>
+  {{ listItembuilder('work') }}
+  </div>
+
+  <div id="" class="res-section">
+  <span class="glyphicon glyphicon-heart res-icon"></span><h3>Volunteer Experience</h3>
+  {{ listItembuilder('volunteer') }}
+  </div>
+
+  <div id="" class="res-section">
+  <span class="glyphicon glyphicon-education res-icon"></span><h3>Education</h3>
+  {{ listItembuilder('education') }}
+  </div>
+
+  <div id="" class="res-section">
+  <span class="glyphicon glyphicon-cog res-icon"></span><h3>Skills</h3>
+  {% for listItem in data.listItems %}
+    {% if listItem.category == 'skill' %}
+      <div class="label label-primary skills">{{ listItem.title }}</div>
+    {% endif %}
+  {% endfor %}
+  </div>
+
+  <div id="" class="res-section">
+  <span class="glyphicon glyphicon-globe res-icon"></span><h3>Language</h3>
+  {% for listItem in data.listItems %}
+    {% if listItem.category == 'language' %}
+      <span class="label label-default lang">{{ listItem.title }}</span>
+    {% endif %}
+  {% endfor %}
+  </div>
+
+{% endif %}
+</div>
+
+{% endblock %}
